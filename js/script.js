@@ -1,3 +1,5 @@
+///////////////////////////////////////////////////////////////////////   tabs
+
 let crossoversTitle = document.querySelector('.title-3_crossovers');
 let sedanTitle = document.querySelector('.title-3_sedan');
 let crossTitle = document.querySelector('.title-3_cross');
@@ -30,4 +32,24 @@ crossTitle.onclick = function () {
     sedan.classList.remove('active');
 }
 
+//////////////////////////////////////////////////////////     modal
 
+let offerOpen = document.querySelector('.btn_offer');
+let closeModal = document.querySelector('.modal__close');
+let modal = document.querySelector('.modal');
+let fonModal = document.querySelector('.modal__fon');
+
+offerOpen.onclick = function () {
+    modal.classList.add('modal-open');
+    document.body.classList.add('no-scroll');
+}
+
+closeModal.onclick = function () {
+    modal.classList.remove('modal-open');
+    document.body.classList.remove('no-scroll');
+}
+
+fonModal.onclick = function () {
+    modal.classList.remove('modal-open');
+    document.body.classList.remove('no-scroll');
+}
