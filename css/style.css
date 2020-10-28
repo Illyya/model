@@ -214,27 +214,13 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: auto;
 }
 
 .cross__item:not(:last-of-type),
 .sedan__item:not(:last-of-type),
 .crossovers__item:not(:last-of-type) {
   margin-right: 20px;
-}
-
-.cross,
-.sedan,
-.crossovers {
-  display: none;
-}
-
-.cross.active,
-.sedan.active,
-.crossovers.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: auto;
 }
 
 .selected {
@@ -461,10 +447,6 @@ body {
           text-decoration: underline #007BCD;
 }
 
-.modal {
-  display: none;
-}
-
 .modal__fon {
   position: fixed;
   background-color: #161618;
@@ -571,10 +553,6 @@ body {
 
 .form__submit:hover {
   cursor: pointer;
-}
-
-.modal-open {
-  display: block;
 }
 
 @media (max-width: 1200px) {

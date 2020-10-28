@@ -9,130 +9,155 @@
     <title>Model</title>
 </head>
 <body>
-    <main class="home">
-        <div class="container">
-            <div class="home__content">
-                <div class="home__model model">
-                    <h2 class="model__title-2 title-2">Модельный ряд</h2>
-                    <div class="model__title-list">
-                        <h3 class="model__title-3 title-3 title-3_crossovers active">Внедорожники / кроссоверы</h3>
-                        <h3 class="model__title-3 title-3 title-3_sedan">Седаны</h3>
-                        <h3 class="model__title-3 title-3 title-3_cross">Cross Country</h3>
+
+    <div id="app">
+        <main class="home">
+            <div class="container">
+                <div class="home__content">
+                    <div class="home__model model">
+                        <h2 class="model__title-2 title-2">Модельный ряд</h2>
+                        <div class="model__title-list">
+                            <h3 
+                                class="model__title-3 title-3 title-3_crossovers" 
+                                v-on:click="crossoversShow"
+                                v-bind:class="{ active: crossovers }">Внедорожники / кроссоверы</h3>
+                            <h3 
+                                class="model__title-3 title-3 title-3_sedan" 
+                                v-on:click="sedanShow"
+                                v-bind:class="{ active: sedan }">Седаны</h3>
+                            <h3 
+                                class="model__title-3 title-3 title-3_cross" 
+                                v-on:click="crossShow"
+                                v-bind:class="{ active: cross }">Cross Country</h3>
+                        </div>
+                        <div 
+                            class="model__crossovers crossovers" 
+                            v-if="crossovers">
+                            <div class="crossovers__item crossovers__item_xc90">
+                                <figure class="model__img">
+                                    <img src="img/xc90.png" alt="xc90">
+                                </figure>
+                                <p class="model__text">XC90</p>
+                            </div>
+                            <div class="crossovers__item crossovers__item_xc60">
+                                <figure class="model__img">
+                                    <img src="img/xc60.png" alt="xc60">
+                                </figure>                            
+                                <p class="model__text active">XC60</p>
+                            </div>
+                            <div class="crossovers__item crossovers__item_xc40">
+                                <figure class="model__img">
+                                    <img src="img/xc40.png" alt="xc40">
+                                </figure>                            
+                                <p class="model__text">XC40</p>
+                            </div>
+                        </div>                    
+                        <div class="model__sedan sedan" v-if="sedan">
+                            <div class="sedan__item sedan__item_s60">
+                                <figure class="model__img">
+                                    <img src="img/s60.png" alt="s60">
+                                </figure>
+                                <p class="model__text">Новый S60</p>
+                            </div>
+                            <div class="sedan__item sedan__item_s90">
+                                <figure class="model__img">
+                                    <img src="img/s90.png" alt="s90">
+                                </figure>                            
+                                <p class="model__text">S90</p>
+                            </div>                        
+                        </div>                    
+                        <div class="model__cross cross" v-if="cross">
+                            <div class="cross__item cross__item_v90">
+                                <figure class="model__img">
+                                    <img src="img/v90.png" alt="v90">
+                                </figure>
+                                <p class="model__text">V90 cross country</p>
+                            </div>
+                            <div class="cross__item cross__item_v60">
+                                <figure class="model__img">
+                                    <img src="img/v60.png" alt="v60">
+                                </figure>                            
+                                <p class="model__text">V60 cross country</p>
+                            </div>                        
+                        </div>                    
                     </div>
-                    <div class="model__crossovers crossovers active">
-                        <div class="crossovers__item crossovers__item_xc90">
-                            <figure class="model__img">
-                                <img src="img/xc90.png" alt="xc90">
+                    <div class="home__selected selected">
+                        <div class="selected__left left">
+                            <div class="left__text">
+                                <p class="left__text_top">15 Автомобилей</p>
+                                <p class="left__text_bottom">по специальным ценам</p>
+                            </div>
+                            <figure class="selected__img">
+                                <img src="img/XC602.png" alt="xc60">
+                                <img class="selected__img_1" src="img/КолесоXC601.png" alt="xc60">
+                                <img class="selected__img_2" src="img/КолесоXC601.png" alt="xc60">
                             </figure>
-                            <p class="model__text">XC90</p>
                         </div>
-                        <div class="crossovers__item crossovers__item_xc60">
-                            <figure class="model__img">
-                                <img src="img/xc60.png" alt="xc60">
-                            </figure>                            
-                            <p class="model__text active">XC60</p>
+                        <div class="selected__right right">
+                            <p class="right__title">XC60</p>
+                            <div class="right__item-list">
+                                <div class="right__item">
+                                    <p class="right__item_top">Выгода до</p>
+                                    <p class="right__item_buttom">250 000 ₽</p>
+                                </div>
+                                <div class="right__item">
+                                    <p class="right__item_top">Бонус</p>
+                                    <p class="right__item_buttom">Trade-in</p>
+                                </div>
+                                <div class="right__item">
+                                    <p class="right__item_top">Кредитная ставка</p>
+                                    <p class="right__item_buttom">5,9%<sup>1</sup></p>
+                                </div>
+                                <div class="right__item">
+                                    <p class="right__item_top">Ежемесячный платеж</p>
+                                    <p class="right__item_buttom">20 358 ₽<sup>2</sup></p>
+                                </div>
+                            </div>
+                            <div class="right__credit-leasing credit-leasing">
+                                <input class="credit-leasing__input credit-leasing__input_credit" type="radio" name="credit-or-leasing" id="credit">
+                                <label class="credit-leasing__label credit-leasing__label_credit" for="credit"><span>Кредит</span></label>
+                                <input class="credit-leasing__input credit-leasing__input_leasing" type="radio" name="credit-or-leasing" id="leasing">
+                                <label class="credit-leasing__label credit-leasing__label_leasing" for="leasing"><span>Лизинг</span></label>
+                            </div>                        
+                            <div class="right__buttom">
+                                <a 
+                                    href="#" 
+                                    class="right__btn btn btn_offer"
+                                    @click="modalOpen">Получить предложение</a>
+                                <a href="#" class="right__btn btn btn_test">Тест-драйв</a>
+                            </div>
                         </div>
-                        <div class="crossovers__item crossovers__item_xc40">
-                            <figure class="model__img">
-                                <img src="img/xc40.png" alt="xc40">
-                            </figure>                            
-                            <p class="model__text">XC40</p>
-                        </div>
-                    </div>                    
-                    <div class="model__sedan sedan">
-                        <div class="sedan__item sedan__item_s60">
-                            <figure class="model__img">
-                                <img src="img/s60.png" alt="s60">
-                            </figure>
-                            <p class="model__text">Новый S60</p>
-                        </div>
-                        <div class="sedan__item sedan__item_s90">
-                            <figure class="model__img">
-                                <img src="img/s90.png" alt="s90">
-                            </figure>                            
-                            <p class="model__text">S90</p>
-                        </div>                        
-                    </div>                    
-                    <div class="model__cross cross">
-                        <div class="cross__item cross__item_v90">
-                            <figure class="model__img">
-                                <img src="img/v90.png" alt="v90">
-                            </figure>
-                            <p class="model__text">V90 cross country</p>
-                        </div>
-                        <div class="cross__item cross__item_v60">
-                            <figure class="model__img">
-                                <img src="img/v60.png" alt="v60">
-                            </figure>                            
-                            <p class="model__text">V60 cross country</p>
-                        </div>                        
-                    </div>                    
+                    </div> 
                 </div>
-                <div class="home__selected selected">
-                    <div class="selected__left left">
-                        <div class="left__text">
-                            <p class="left__text_top">15 Автомобилей</p>
-                            <p class="left__text_bottom">по специальным ценам</p>
-                        </div>
-                        <figure class="selected__img">
-                            <img src="img/XC602.png" alt="xc60">
-                            <img class="selected__img_1" src="img/КолесоXC601.png" alt="xc60">
-                            <img class="selected__img_2" src="img/КолесоXC601.png" alt="xc60">
-                        </figure>
-                    </div>
-                    <div class="selected__right right">
-                        <p class="right__title">XC60</p>
-                        <div class="right__item-list">
-                            <div class="right__item">
-                                <p class="right__item_top">Выгода до</p>
-                                <p class="right__item_buttom">250 000 ₽</p>
-                            </div>
-                            <div class="right__item">
-                                <p class="right__item_top">Бонус</p>
-                                <p class="right__item_buttom">Trade-in</p>
-                            </div>
-                            <div class="right__item">
-                                <p class="right__item_top">Кредитная ставка</p>
-                                <p class="right__item_buttom">5,9%<sup>1</sup></p>
-                            </div>
-                            <div class="right__item">
-                                <p class="right__item_top">Ежемесячный платеж</p>
-                                <p class="right__item_buttom">20 358 ₽<sup>2</sup></p>
-                            </div>
-                        </div>
-                        <div class="right__credit-leasing credit-leasing">
-                            <input class="credit-leasing__input credit-leasing__input_credit" type="radio" name="credit-or-leasing" id="credit">
-                            <label class="credit-leasing__label credit-leasing__label_credit" for="credit"><span>Кредит</span></label>
-                            <input class="credit-leasing__input credit-leasing__input_leasing" type="radio" name="credit-or-leasing" id="leasing">
-                            <label class="credit-leasing__label credit-leasing__label_leasing" for="leasing"><span>Лизинг</span></label>
-                        </div>                        
-                        <div class="right__buttom">
-                            <a href="#" class="right__btn btn btn_offer">Получить предложение</a>
-                            <a href="#" class="right__btn btn btn_test">Тест-драйв</a>
-                        </div>
-                    </div>
-                </div> 
             </div>
-        </div>
-    </main>    
-    <section class="modal">
-        <div class="modal__fon"></div>
-        <div class="modal__content">
-            <div class="modal__container">
-                <div class="modal__close">&#10006;</div>
-                <p class="modal__title">Получить предложение</p>
-                <p class="modal__text">Оставьте заявку и наши менеджеры свяжутся с Вами в ближайшее время</p>
-                <form class="modal__form form" action="#" method="get">
-                    <input class="form__input-tel" type="tel" name="tel" id="phone" placeholder="+7 (___) ___-__-__">
-                    <button class="btn btn_offer form__submit">Получить предложение</button>
-                </form>          
-                <div class="modal__check">
-                    <input class="modal__input-check" type="checkbox" name="data" id="data">
-                    <label class="modal__label-check" for="data">Я даю согласие на <a href="#">обработку персональных данных</a></label>
-                </div>  
+        </main>    
+        <section 
+            class="modal"
+            v-if="modal">
+            <div 
+                class="modal__fon"
+                @click="modalClose"></div>
+            <div class="modal__content">
+                <div class="modal__container">
+                    <div 
+                        class="modal__close"
+                        @click="modalClose">&#10006;</div>
+                    <p class="modal__title">Получить предложение</p>
+                    <p class="modal__text">Оставьте заявку и наши менеджеры свяжутся с Вами в ближайшее время</p>
+                    <form class="modal__form form" action="#" method="get">
+                        <input class="form__input-tel" type="tel" name="tel" id="phone" placeholder="+7 (___) ___-__-__">
+                        <button class="btn btn_offer form__submit">Получить предложение</button>
+                    </form>          
+                    <div class="modal__check">
+                        <input class="modal__input-check" type="checkbox" name="data" id="data">
+                        <label class="modal__label-check" for="data">Я даю согласие на <a href="#">обработку персональных данных</a></label>
+                    </div>  
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>   
+     
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="js/script.min.js"></script>
 </body>
 </html>
