@@ -32,7 +32,7 @@
                         </div>
                         <div 
                             class="model__crossovers crossovers" 
-                            v-if="crossovers">
+                            v-show="crossovers">
                             <div class="crossovers__item crossovers__item_xc90">
                                 <figure class="model__img">
                                     <img src="img/xc90.png" alt="xc90">
@@ -52,7 +52,7 @@
                                 <p class="model__text">XC40</p>
                             </div>
                         </div>                    
-                        <div class="model__sedan sedan" v-if="sedan">
+                        <div class="model__sedan sedan" v-show="sedan">
                             <div class="sedan__item sedan__item_s60">
                                 <figure class="model__img">
                                     <img src="img/s60.png" alt="s60">
@@ -66,7 +66,7 @@
                                 <p class="model__text">S90</p>
                             </div>                        
                         </div>                    
-                        <div class="model__cross cross" v-if="cross">
+                        <div class="model__cross cross" v-show="cross">
                             <div class="cross__item cross__item_v90">
                                 <figure class="model__img">
                                     <img src="img/v90.png" alt="v90">
@@ -133,7 +133,7 @@
         </main>    
         <section 
             class="modal"
-            v-if="modal">
+            v-show="modal">
             <div 
                 class="modal__fon"
                 @click="modalClose"></div>
