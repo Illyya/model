@@ -131,11 +131,12 @@
                 </div>
             </div>
         </main>    
-        <section 
+        <div 
             class="modal"
             v-show="modal">
             <div 
                 class="modal__fon"
+                v-show="modal"
                 @click="modalClose"></div>
             <div class="modal__content">
                 <div class="modal__container">
@@ -154,7 +155,7 @@
                     </div>  
                 </div>
             </div>
-        </section>
+        </div>
     </div>   
      
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>

@@ -1,10 +1,10 @@
 var app = new Vue({
     el: '#app',
     data: {
+        modal: false,
         crossovers: true,
         sedan: false,
         cross: false,
-        modal: false
     },
     methods: {
         crossoversShow() {
