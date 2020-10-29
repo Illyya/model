@@ -447,6 +447,10 @@ body {
           text-decoration: underline #007BCD;
 }
 
+.modal {
+  display: none;
+}
+
 .modal__fon {
   position: fixed;
   background-color: #161618;
@@ -528,6 +532,10 @@ body {
 
 .modal__label-check a {
   text-decoration: underline;
+}
+
+.modal.active {
+  display: block;
 }
 
 .form {

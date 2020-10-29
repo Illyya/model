@@ -1,7 +1,6 @@
 var app = new Vue({
     el: '#app',
     data: {
-        modal: false,
         crossovers: true,
         sedan: false,
         cross: false,
@@ -29,11 +28,13 @@ var app = new Vue({
             }         
         },
         modalClose() {
-            this.modal = false;
+            let modal = document.querySelector('.modal');
+            modal.classList.remove('active');
             document.body.classList.remove('no-scroll');
         },
         modalOpen() {
-            this.modal = true;
+            let modal = document.querySelector('.modal');
+            modal.classList.add('active');
             document.body.classList.add('no-scroll');
         }                
     }
