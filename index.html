@@ -114,8 +114,9 @@
                                 </div>
                             </div>
                             <div class="right__credit-leasing credit-leasing">
-                                <input class="credit-leasing__input credit-leasing__input_credit" type="radio" name="credit-or-leasing" id="credit">
+                                <input class="credit-leasing__input credit-leasing__input_credit" type="radio" name="credit-or-leasing" id="credit" checked>
                                 <label class="credit-leasing__label credit-leasing__label_credit" for="credit"><span>Кредит</span></label>
+                                <span class="credit-leasing__element" onclick="credit.checked ? leasing.checked = true : credit.checked = true"></span>
                                 <input class="credit-leasing__input credit-leasing__input_leasing" type="radio" name="credit-or-leasing" id="leasing">
                                 <label class="credit-leasing__label credit-leasing__label_leasing" for="leasing"><span>Лизинг</span></label>
                             </div>                        

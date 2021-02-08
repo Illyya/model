@@ -361,6 +361,12 @@ body {
 }
 
 .credit-leasing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 50px;
 }
 
@@ -372,7 +378,7 @@ body {
   opacity: 1;
 }
 
-.credit-leasing__input:checked + label::before {
+.credit-leasing__input:checked ~ .credit-leasing__element::before {
   right: 15px;
 }
 
@@ -395,7 +401,23 @@ body {
   opacity: 0.5;
 }
 
-.credit-leasing__label:first-of-type::before {
+.credit-leasing__element {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 17px;
+  margin-left: 10px;
+  border: 1px solid #007BCD;
+  border-radius: 31px;
+  cursor: pointer;
+}
+
+.credit-leasing__element::before {
   content: '';
   position: absolute;
   right: 3px;
@@ -407,16 +429,6 @@ body {
   -webkit-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
-}
-
-.credit-leasing__label:first-of-type::after {
-  content: '';
-  display: inline-block;
-  width: 30px;
-  height: 17px;
-  margin-left: 10px;
-  border: 1px solid #007BCD;
-  border-radius: 31px;
 }
 
 .btn {
